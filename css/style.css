@@ -61,3 +61,9 @@ a {
 .item-radio input:checked ~ .radio-icon {
     color: #66cc33;
 }
+.vote-image {
+    width: 40px;
+    vertical-align: middle;
+    border-radius: 3px;
+    margin-right: 5px;
+}
