@@ -1,0 +1,52 @@
+/* Empty. Add your own CSS if you like */
+
+body {
+    color: #969696;
+}
+.item p {
+    color: #969696;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #6d6d6d;
+}
+a {
+    text-decoration: none;
+}
+.bar.bar-politics {
+    border-color: #E07428;
+    background-color: #F79957;
+    background-image: linear-gradient(0deg, #F79957, #F79957 50%, transparent 50%);
+    color: #fff;
+}
+.bar.bar-politics .title {
+    color: white;
+}
+.bar-politics .button {
+    border-color: #F79957;
+    background-color: #F79957;
+    color: #fff;
+}
+.item-divider {
+    background-color: #FFEFD2;
+    color: #F79957;
+}
+.item {
+    border-color: #FFEDD2;
+}
+.menu-item .item {
+    color: #F79957;
+}
+.politics {
+    color: #F79957;
+}
+.button.button-politics {
+    border-color: #E07428;
+    background-color: #F79957;
+    background-image: linear-gradient(0deg, #F79957, #F79957 50%, transparent 50%);
+    color: #fff;
+}
