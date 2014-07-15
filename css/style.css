@@ -35,6 +35,10 @@ a {
     background-color: #FFEFD2;
     color: #F79957;
 }
+.item-radio input:checked ~ .item-content {
+    background: #FFEFD2;
+    color: #F79957;
+}
 .item {
     border-color: #FFEDD2;
 }
@@ -49,4 +53,11 @@ a {
     background-color: #F79957;
     background-image: linear-gradient(0deg, #F79957, #F79957 50%, transparent 50%);
     color: #fff;
+}
+.item-radio .radio-icon {
+    visibility: visible;
+    color: #ef4e3a;
+}
+.item-radio input:checked ~ .radio-icon {
+    color: #66cc33;
 }

@@ -44,6 +44,14 @@ angular.module('starter.controllers', [])
   ];
 })
 
+.controller('VoteCtrl', function($scope) {
+  $scope.votes = [
+    { title: 'Reggae', id: 1 },
+    { title: 'Chill', id: 2 },
+    { title: 'Dubstep', id: 3 }
+  ];
+})
+
 .controller('HomeCtrl', function($scope, $stateParams) {
 })
 
@@ -57,6 +65,15 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PhotosCtrl', function($scope, $stateParams) {
+})
+
+.controller('FacebookCtrl', function($scope, $stateParams) {
+})
+
+.controller('MembershipCtrl', function($scope, $stateParams) {
+})
+
+.controller('UploadCtrl', function($scope, $stateParams) {
 })
 
 .controller('VideosCtrl', function($scope, $stateParams) {

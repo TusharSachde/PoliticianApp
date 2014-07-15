@@ -91,6 +91,76 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 
+    .state('app.constituency', {
+        url: "/constituency",
+      views: {
+        'menuContent' :{
+            templateUrl: "templates/constituency.html",
+            controller: 'HomeCtrl'
+        }
+      }
+    })
+
+    .state('app.party', {
+        url: "/party",
+      views: {
+        'menuContent' :{
+            templateUrl: "templates/party.html",
+            controller: 'HomeCtrl'
+        }
+      }
+    })
+
+    .state('app.facebook', {
+        url: "/facebook",
+      views: {
+        'menuContent' :{
+            templateUrl: "templates/facebook.html",
+            controller: 'FacebookCtrl'
+        }
+      }
+    })
+
+    .state('app.youtube', {
+        url: "/youtube",
+      views: {
+        'menuContent' :{
+            templateUrl: "templates/youtube.html",
+            controller: 'FacebookCtrl'
+        }
+      }
+    })
+
+    .state('app.vote', {
+        url: "/vote",
+      views: {
+        'menuContent' :{
+            templateUrl: "templates/vote.html",
+            controller: 'VoteCtrl'
+        }
+      }
+    })
+
+    .state('app.membership', {
+        url: "/membership",
+      views: {
+        'menuContent' :{
+            templateUrl: "templates/membership.html",
+            controller: 'MembershipCtrl'
+        }
+      }
+    })
+
+    .state('app.upload', {
+        url: "/upload",
+      views: {
+        'menuContent' :{
+            templateUrl: "templates/upload.html",
+            controller: 'UploadCtrl'
+        }
+      }
+    })
+
     .state('app.single', {
       url: "/playlists/:playlistId",
       views: {
