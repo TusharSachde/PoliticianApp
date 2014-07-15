@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<gap:splash src="splash.png" />
+<preference name="fullscreen" value="true" />
+<preference name="orientation" value="portrait" />
+<preference name="splash-screen-duration" value="10000" />
