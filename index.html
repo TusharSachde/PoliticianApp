@@ -23,6 +23,57 @@
     <!-- your app's js -->
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
+    <script>
+        function initPushwoosh() {
+            var pushNotification = window.plugins.pushNotification;
+
+            //set push notifications handler
+            document.addEventListener('push-notification', function (event) {
+                var title = event.notification.title;
+                var userData = event.notification.userdata;
+
+                if (typeof (userData) != "undefined") {
+                    console.warn('user data: ' + JSON.stringify(userData));
+                }
+
+                alert(title);
+            });
+
+            //initialize Pushwoosh with projectid: "GOOGLE_PROJECT_ID", appid : "PUSHWOOSH_APP_ID". This will trigger all pending push notifications on start.
+            pushNotification.onDeviceReady({
+                projectid: "1064980123221",
+                appid: "864A5-72625"
+            });
+
+            //register for pushes
+            pushNotification.registerDevice(
+                function (status) {
+                    var pushToken = status;
+                    console.warn('push token: ' + pushToken);
+                },
+                function (status) {
+                    console.warn(JSON.stringify(['failed to register ', status]));
+                }
+            );
+        }
+
+
+
+        function init() {
+            document.addEventListener("deviceready", initPushwoosh, true);
+
+            //rest of the code
+        }
+
+
+        document.addEventListener('push-notification', function (event) {
+            var title = event.notification.title;
+            var userData = event.notification.userdata;
+
+            console.warn('user data: ' + JSON.stringify(userData));
+            alert(title);
+        });
+    </script>
 
 </head>
 
@@ -33,65 +84,8 @@
     color: black;
 ">Demo</div>
     <ion-nav-view></ion-nav-view>
-   
-        <script>
-            var pushNotification;
-            pushNotification = window.plugins.pushNotification;
-            
-             pushNotification.registerDevice({
-                        alert: true,
-                        badge: true,
-                        sound: true,
-                        appname: "Politician",
-                        pw_appid: "864A5-72625"
-                    },
-                    function (status) {
-                        var pushToken = status;
-                        showStatusMsg('push token: ' + JSON.stringify(pushToken));
-                        document.getElementById("console").innerHTML = 'push token: ' + JSON.stringify(pushToken);
-                    },
-                    function (status) {
-                        showStatusMsg(JSON.stringify(['failed to register', status]));
-                        document.getElementById("console").innerHTML = JSON.stringify(['failed to register', status]);
-                    });
-
-            if (device.platform == 'android' || device.platform == 'Android') {
-                pushNotification.registerDevice({
-                        alert: true,
-                        badge: true,
-                        sound: true,
-                        projectid: "1064980123221",
-                        appid: "864A5-72625"
-                    },
-                    function (status) {
-                        var pushToken = status;
-                        showStatusMsg('push token: ' + JSON.stringify(pushToken));
-                        document.getElementById("console").innerHTML = 'push token: ' + JSON.stringify(pushToken);
-                    },
-                    function (status) {
-                        showStatusMsg(JSON.stringify(['failed to register', status]));
-                        document.getElementById("console").innerHTML = JSON.stringify(['failed to register', status]);
-                    });
 
 
-            } else {
-                pushNotification.registerDevice({
-                        alert: true,
-                        badge: true,
-                        sound: true,
-                        appname: "Politician",
-                        pw_appid: "864A5-72625"
-                    },
-                    function (status) {
-                        var pushToken = status;
-                        showStatusMsg('push token: ' + JSON.stringify(pushToken));
-                    },
-                    function (status) {
-                        showStatusMsg(JSON.stringify(['failed to register', status]));
-                    });
-
-            }
-        </script>
 </body>
 
 </html>
