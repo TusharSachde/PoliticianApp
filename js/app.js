@@ -86,7 +86,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       views: {
         'menuContent' :{
             templateUrl: "templates/videos.html",
-            controller: 'VideosCtrl'
+            controller: 'YoutubeCtrl'
         }
       }
     })
@@ -126,7 +126,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       views: {
         'menuContent' :{
             templateUrl: "templates/youtube.html",
-            controller: 'FacebookCtrl'
+            controller: 'YoutubeCtrl'
         }
       }
     })
@@ -174,4 +174,3 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/home');
 });
-

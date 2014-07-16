@@ -77,4 +77,26 @@ angular.module('starter.controllers', [])
 })
 
 .controller('VideosCtrl', function($scope, $stateParams) {
+    
+})
+
+.controller('YoutubeCtrl', function($scope) {
+    $scope.code = '3TKgMR1vf8w';
+})
+
+.directive('myYoutube', function($sce) {
+    return {
+        restrict: 'EA',
+        scope: { code:'=' },
+        replace: true,
+        template: '<div style=""><iframe style="overflow:hidden;width:100%" width="100%" src="{{url}}" frameborder="0" allowfullscreen></iframe></div>',
+        link: function (scope) {
+            console.log('here');
+            scope.$watch('code', function (newVal) {
+                if (newVal) {
+                    scope.url = $sce.trustAsResourceUrl("http://www.youtube.com/embed/" + newVal);
+                }
+            });
+        }
+    };
 });
