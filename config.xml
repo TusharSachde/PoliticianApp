@@ -12,7 +12,9 @@
     <author href="http://wohlig.com" email="info@wohlig.com">
         Wohlig Technologies
     </author>
-
+	<access origin="*.pushwoosh.com" />
+	<gap:plugin name="com.pushwoosh.plugins.pushwoosh" version="3.0.2" />
+	
     <gap:splash src="splash.png" />
     <preference name="fullscreen" value="false" />
     <preference name="orientation" value="portrait" />
