@@ -89,12 +89,11 @@ angular.module('starter.controllers', [])
         restrict: 'EA',
         scope: { code:'=' },
         replace: true,
-        template: '<div style=""><iframe style="overflow:hidden;width:100%" width="100%" src="{{url}}" frameborder="0" allowfullscreen></iframe></div>',
+        template: '<iframe style="overflow:hidden;width:100%" width="100%" src="{{url}}" frameborder="0" allowfullscreen></iframe>',
         link: function (scope) {
-            console.log('here');
             scope.$watch('code', function (newVal) {
                 if (newVal) {
-                    scope.url = $sce.trustAsResourceUrl("http://www.youtube.com/embed/" + newVal);
+                    scope.url = $sce.trustAsResourceUrl('http://www.youtube.com/embed/' + newVal);
                 }
             });
         }
