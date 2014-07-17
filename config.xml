@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.phonegap.helloworld" version="1.0.0">
 
     <name>Politician</name>
 
@@ -15,7 +15,7 @@
     <gap:plugin name="org.apache.cordova.device" />    
     <gap:plugin name="com.pushwoosh.plugins.pushwoosh" version="3.0.2" />
 
-
+    <icon src="img/ionic.png" />   
     <gap:splash src="img/splash.png" />
     <preference name="fullscreen" value="false" />
     <preference name="orientation" value="portrait" />
