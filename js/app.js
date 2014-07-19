@@ -141,6 +141,16 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 
+    .state('app.voteform', {
+        url: "/voteform",
+      views: {
+        'menuContent' :{
+            templateUrl: "templates/vote-form.html",
+            controller: 'VoteFormCtrl'
+        }
+      }
+    })
+
     .state('app.membership', {
         url: "/membership",
       views: {

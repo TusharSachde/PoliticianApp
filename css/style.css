@@ -6,6 +6,12 @@ body {
 .item p {
     color: #969696;
 }
+.item-select select {
+    color: #969696;
+}
+.input-label {
+    color: #969696;
+}
 h1,
 h2,
 h3,

@@ -68,6 +68,9 @@ angular.module('starter.controllers', [])
 })
 
 .controller('FacebookCtrl', function($scope, $stateParams) {
+    $scope.$on('$viewContentLoaded', function () {
+        
+    });
 })
 
 .controller('MembershipCtrl', function($scope, $stateParams) {
@@ -76,26 +79,12 @@ angular.module('starter.controllers', [])
 .controller('UploadCtrl', function($scope, $stateParams) {
 })
 
+.controller('VoteFormCtrl', function($scope, $stateParams) {
+})
+
 .controller('VideosCtrl', function($scope, $stateParams) {
     
 })
 
 .controller('YoutubeCtrl', function($scope) {
-    $scope.code = '3TKgMR1vf8w';
-})
-
-.directive('myYoutube', function($sce) {
-    return {
-        restrict: 'EA',
-        scope: { code:'=' },
-        replace: true,
-        template: '<iframe style="overflow:hidden;width:100%" width="100%" src="{{url}}" frameborder="0" allowfullscreen></iframe>',
-        link: function (scope) {
-            scope.$watch('code', function (newVal) {
-                if (newVal) {
-                    scope.url = $sce.trustAsResourceUrl('http://www.youtube.com/embed/' + newVal);
-                }
-            });
-        }
-    };
 });
