@@ -76,9 +76,3 @@ a {
 input[readonly]:not(.cloned-text-input) {
     background: white;
 }
-.scroll {
-    -webkit-user-select: text;
-    -moz-user-select: text;
-    -ms-user-select: text;
-    user-select: text;
-}
