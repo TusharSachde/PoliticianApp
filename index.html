@@ -39,11 +39,11 @@
         // This is for the clipboard plugin  
         function handleCopyAndPaste() {  
             $(".copyButton").click(function() {  
-                window.plugins.copy($("#result").val());  
+                window.plugins.clipboard.copy($("#result").val());  
                 console.log('Text Copied');
             });  
             $(".pasteButton").click(function() {  
-                window.plugins.paste(function (text) {  
+                window.plugins.clipboard.paste(function (text) {  
                     $("#convertThis").val(text);  
                     convert();  
                 });  
