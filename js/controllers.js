@@ -67,6 +67,9 @@ angular.module('starter.controllers', [])
 .controller('PhotosCtrl', function($scope, $stateParams) {
 })
 
+.controller('PhotosInnerCtrl', function($scope, $stateParams, $ionicSlideBoxDelegate) {
+})
+
 .controller('FacebookCtrl', function($scope, $stateParams) {
     $scope.$on('$viewContentLoaded', function () {
         

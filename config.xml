@@ -3,10 +3,10 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.phonegap.helloworld" version="1.0.0">
 
-    <name>Politician</name>
+    <name>Prithviraj Chavan</name>
 
     <description>
-        Politicians App
+        Politician's App
     </description>
 
     <author href="http://wohlig.com" email="info@wohlig.com">
@@ -14,14 +14,17 @@
     </author>
     <gap:plugin name="org.apache.cordova.device" />    
     <gap:plugin name="com.pushwoosh.plugins.pushwoosh" version="3.0.2" />
+    <gap:plugin name="com.phonegap.plugin.statusbar" /> <!-- Status bar plugin -->  
+    <gap:plugin name="com.verso.cordova.clipboard" /> <!-- Clipboard plugin -->  
+    <gap:plugin name="com.chariotsolutions.cordova.plugin.keyboard_toolbar_remover" /> <!-- Keyboard toolbar removal plugin -->  
+<!--    <gap:plugin name="org.apache.cordova.splashscreen" />  Splashscreen plugin   -->
+    <gap:plugin name="org.apache.cordova.vibration" /> <!-- Vibration plugin -->
 
     <icon src="logo-512.png" />   
     <gap:splash src="img/splash.png" />
     <preference name="fullscreen" value="false" />
     <preference name="orientation" value="portrait" />
-    <preference name="splash-screen-duration" value="10000" />
-    
-    
+    <preference name="splash-screen-duration" value="5000" />
 	
     <access origin="*"/> <!-- allow all pages, use for development -->
     <access origin="*.pushwoosh.com"/> <!-- allow pushwoosh service -->

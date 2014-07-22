@@ -81,6 +81,16 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
   
+    .state('app.photos-inner', {
+        url: "/photos/inner",
+      views: {
+        'menuContent' :{
+            templateUrl: "templates/photos-inner.html",
+            controller: 'PhotosInnerCtrl'
+        }
+      }
+    })
+  
     .state('app.videos', {
         url: "/videos",
       views: {

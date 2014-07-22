@@ -29,9 +29,31 @@
     <script type="text/javascript" src="js/PushwooshAndroid.js"></script>
 <!--    <script type="text/javascript" src="js/PushwooshiOS.js"></script>-->
     <script type="text/javascript" src="js/index.js"></script>
+<!--    <script type="text/javascript" src="js/clipboard.js"></script>-->
 
     <script type="text/javascript">
         app.initialize();
+    </script>
+    
+    <script>
+        // This is for the clipboard plugin  
+        function handleCopyAndPaste() {  
+            $(".copyButton").click(function() {  
+                window.plugins.copy($("#result").val());  
+                console.log('Text Copied');
+            });  
+            $(".pasteButton").click(function() {  
+                window.plugins.paste(function (text) {  
+                    $("#convertThis").val(text);  
+                    convert();  
+                });  
+            });  
+        }
+        navigator.notification.vibrate(2500);
+
+        $("#convertThis").focus(function() {
+            toolbar.hide()
+        });
     </script>
     
 
