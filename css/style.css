@@ -49,7 +49,7 @@ a {
     border-color: #FFEDD2;
 }
 .menu-item .item {
-    color: #F79957;
+    color: #aaa;
 }
 .politics {
     color: #F79957;
@@ -77,4 +77,21 @@ a {
     width: 50%;
     float: left;
     padding: 0 10px 10px 0px;
+}
+.grid a {
+    color: #F79957;
+    text-align: center;
+}
+.grid i {
+    font-size: 55px;
+    margin: 0 auto;
+    display: block;
+    color: #68BD4E;
+}
+.grid .col-33 {
+    height: 100px;
+    padding: 5px;
+}
+.grid p {
+    color: #898989;
 }

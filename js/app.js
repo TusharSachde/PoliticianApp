@@ -40,6 +40,17 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
   
+
+  .state('app.about', {
+      url: "/about",
+      views: {
+          'menuContent' :{
+              templateUrl: "templates/about.html",
+              controller: 'AboutCtrl'
+          }
+      }
+  })
+
     .state('app.article', {
         url: "/article",
       views: {
@@ -127,6 +138,16 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         'menuContent' :{
             templateUrl: "templates/facebook.html",
             controller: 'FacebookCtrl'
+        }
+      }
+    })
+  
+    .state('app.twitter', {
+        url: "/twitter",
+      views: {
+        'menuContent' :{
+            templateUrl: "templates/twitter.html",
+            controller: 'TwitterCtrl'
         }
       }
     })

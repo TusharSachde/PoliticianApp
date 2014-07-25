@@ -62,8 +62,11 @@ angular.module('starter.controllers', [])
     $scope.userinfo = function() {
         $scope.modal.show();
     };
-    
 
+
+})
+
+.controller('AboutCtrl', function($scope, $stateParams, $ionicModal) {
 })
 
 .controller('ArticleCtrl', function($scope, $stateParams) {
@@ -83,7 +86,13 @@ angular.module('starter.controllers', [])
 
 .controller('FacebookCtrl', function($scope, $stateParams) {
     $scope.$on('$viewContentLoaded', function () {
-        
+        (function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "//connect.facebook.net/en_US/all.js#xfbml=1"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));
+    });
+})
+
+.controller('TwitterCtrl', function($scope, $stateParams) {
+    $scope.$on('$viewContentLoaded', function () {
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
     });
 })
 
