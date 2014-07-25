@@ -73,6 +73,8 @@ a {
     border-radius: 3px;
     margin-right: 5px;
 }
-input[readonly]:not(.cloned-text-input) {
-    background: white;
+.img-half {
+    width: 50%;
+    float: left;
+    padding: 0 10px 10px 0px;
 }

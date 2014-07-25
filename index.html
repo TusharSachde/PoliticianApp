@@ -17,16 +17,10 @@
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
-<!--    <script src="phonegap.js"></script>-->
+    <script type="text/javascript" src="phonegap.js"></script>  
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="PushNotification.js"></script>
-    <script src="phonegap.js"></script>  
-    <script src="device.js"></script>  
-    <script src="statusbar.js"></script>  
-    <script src="clipboard.js"></script>  
-    <script src="keyboard_toolbar_remover.js"></script>  
-    <script src="splashscreen.js"></script>  
-    <script src="vibration.js"></script>
+    <script type="text/javascript" src="clipboard.js"></script>
 
     <!-- your app's js -->
     <script src="js/app.js"></script>
@@ -45,8 +39,7 @@
         // This is for the clipboard plugin  
         function handleCopyAndPaste() {  
             $(".copyButton").click(function() {  
-                window.plugins.clipboard.copy($("#result").val());  
-                console.log('Text Copied');
+                window.plugins.clipboard.copy($("#result").val());
             });  
             $(".pasteButton").click(function() {  
                 window.plugins.clipboard.paste(function (text) {  
@@ -54,11 +47,6 @@
                     convert();  
                 });  
             });  
-        }
-        navigator.notification.vibrate(2500);
-
-        $("#convertThis").focus(function() {
-            toolbar.hide()
         });
     </script>
     

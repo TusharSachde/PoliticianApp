@@ -52,7 +52,18 @@ angular.module('starter.controllers', [])
   ];
 })
 
-.controller('HomeCtrl', function($scope, $stateParams) {
+.controller('HomeCtrl', function($scope, $stateParams, $ionicModal) {
+    $ionicModal.fromTemplateUrl('templates/user-info.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function(modal) {
+        $scope.modal = modal;
+    });
+    $scope.userinfo = function() {
+        $scope.modal.show();
+    };
+    
+
 })
 
 .controller('ArticleCtrl', function($scope, $stateParams) {
