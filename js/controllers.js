@@ -33,17 +33,6 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
-})
-
 .controller('VoteCtrl', function($scope) {
   $scope.votes = [
     { title: 'Reggae', id: 1 },
@@ -53,13 +42,24 @@ angular.module('starter.controllers', [])
 })
 
 .controller('HomeCtrl', function($scope, $stateParams, $ionicModal) {
+
+    $scope.loginData = {};
+
+    // Create the login modal that we will use later
     $ionicModal.fromTemplateUrl('templates/user-info.html', {
-        scope: $scope,
-        animation: 'slide-in-up'
+        scope: $scope
     }).then(function(modal) {
         $scope.modal = modal;
+        $scope.modal.show();
     });
-    $scope.userinfo = function() {
+
+    // Triggered in the login modal to close it
+    $scope.closeLogin = function() {
+        $scope.modal.hide();
+    },
+
+        // Open the login modal
+        $scope.login = function() {
         $scope.modal.show();
     };
 
