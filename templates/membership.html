@@ -4,100 +4,78 @@
         <div class="list">
             <label class="item item-input item-select">
                 <div class="input-label">
-                    MP Constituency
+                    MP constituency
                 </div>
-                <select>
-                    <option value="" selected>Select one</option>
-                    <option value="">Ahmadnagar</option>
-                    <option value="">Akola</option>
-                    <option value="">Amravati</option>
-                    <option value="">Aurangabad</option>
-                    <option value="">Baramati</option>
-                    <option value="">Beed</option>
+                <select  ng-model="membership.mpconstituency">
+                    <option ng-repeat="val in getmpconstituency" value="{{val.id}}" selected>{{val.name}}</option>
                 </select>
             </label>
-            <label class="item item-input item-select">
+               <label class="item item-input item-select">
                 <div class="input-label">
-                    MLA Constituency
+                    MLA constituency
                 </div>
-                <select>
-                    <option value="" selected>Select one</option>
-                    <option value="">Achalpur</option>
-                    <option value="">Aheri</option>
-                    <option value="">Ahmadpur</option>
-                    <option value="">Ahmednagar City</option>
-                    <option value="">Ahmednagar North</option>
-                    <option value="">Ahmednagar South</option>
+                <select  ng-model="membership.mlaconstituency">
+                    <option ng-repeat="val in getmlaconstituency" value="{{val.id}}" selected>{{val.name}}</option>
                 </select>
             </label>
             <label class="item item-input">
                 <span class="input-label">Area</span>
-                <input type="text">
+                <input type="text" ng-model="membership.area">
             </label>
             <label class="item item-input">
                 <span class="input-label">Polling Centre</span>
-                <input type="text">
+                <input type="text" ng-model="membership.pollingcenter">
             </label>
-            <label class="item item-input item-select">
+           <label class="item item-input item-select">
                 <div class="input-label">
                     Select Position
                 </div>
-                <select>
-                    <option value="" selected>Select Position</option>
-                    <option value="">President</option>
-                    <option value="">Youth President</option>
-                    <option value="">District President</option>
-                    <option value="">Mandal President</option>
-                    <option value="">Secretary</option>
-                    <option value="">General Secretary</option>
+                <select  ng-model="membership.position">
+                    <option ng-repeat="val in getposition" value="{{val.id}}" selected>{{val.name}}</option>
                 </select>
             </label>
             <label class="item item-input">
                 <span class="input-label">Full Name</span>
-                <input type="text">
+                <input type="text" ng-model="membership.fullname">
             </label>
             <label class="item item-input">
                 <span class="input-label">Birthday</span>
-                <input type="date">
+                <input type="date" ng-model="membership.birthday">
             </label>
             <label class="item item-input item-stacked-label">
                 <span class="input-label">Address</span>
-                <textarea></textarea>
+                <textarea ng-model="membership.address"></textarea>
             </label>
             <label class="item item-input">
                 <span class="input-label">Village</span>
-                <input type="text">
+                <input type="text" ng-model="membership.village">
             </label>
             <label class="item item-input">
                 <span class="input-label">Town</span>
-                <input type="text">
+                <input type="text" ng-model="membership.town">
             </label>
             <label class="item item-input">
                 <span class="input-label">District</span>
-                <input type="text">
+                <input type="text" ng-model="membership.district">
             </label>
             <label class="item item-input">
                 <span class="input-label">Phone No.</span>
-                <input type="tel">
+                <input type="tel" ng-model="membership.phoneno">
             </label>
             <label class="item item-input">
                 <span class="input-label">Email</span>
-                <input type="email">
+                <input type="email" ng-model="membership.email">
             </label>
             <label class="item item-input item-select">
                 <div class="input-label">
                     State
                 </div>
-                <select>
-                    <option value="" selected>Select State</option>
+                <select  ng-model="membership.state">
+                    <option ng-repeat="val in getstate" value="{{val.id}}" selected>{{val.name}}</option>
                 </select>
             </label>
         </div>
-        <div class="padding">
-            <a href="#">
-                <button class="button button-block button-politics">Register</button>
-            </a>
-        </div>
+        <div class="padding"><a href="#" ng-click="insertmembership(membership)"><button class="button button-block button-politics">Register</button></a></div>
 
     </ion-content>
 </ion-view>

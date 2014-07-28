@@ -3,17 +3,9 @@
 
         <div class="list">
             <div class="row text-center">
-                <div class="col-33 padding">
-                    <a href="#/app/photos/inner"><img src="img/ionic.png" class="full-image"></a>
-                    <p>Item 1</p>
-                </div>
-                <div class="col-33 padding">
-                    <a href="#/app/photos/inner"><img src="img/ionic.png" class="full-image"></a>
-                    <p>Item 2</p>
-                </div>
-                <div class="col-33 padding">
-                    <a href="#/app/photos/inner"><img src="img/ionic.png" class="full-image"></a>
-                    <p>Item 3</p>
+                <div class="col-33 padding" ng-repeat="val in getimage">
+                    <a href="#/app/photos/inner?name={{val.name}}"><img src="img/uploads/{{val.name}}" class="full-image"></a>
+                    <p>{{val.title}}</p>
                 </div>
 
             </div>

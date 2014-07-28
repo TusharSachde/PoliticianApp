@@ -1,9 +1,84 @@
-angular.module('starter.controllers', [])
+var startercontrollers = angular.module('starter.controllers', ['restservice'])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout,RestService) {
   // Form data for the login modal
   $scope.loginData = {};
 
+    var image=function(data, status){
+        console.log(data);
+        $scope.getimage=data;
+    };
+   RestService.image().success(image);
+    
+  var region=function(data, status){
+        console.log(data);
+        $scope.getregion=data;
+    };
+   RestService.region().success(region);
+    
+  var mpconstituency=function(data, status){
+        console.log(data);
+        $scope.getmpconstituency=data;
+    };
+   RestService.mpconstituency().success(mpconstituency);
+    
+  var mlaconstituency=function(data, status){
+        console.log(data);
+        $scope.getmlaconstituency=data;
+    };
+   RestService.mlaconstituency().success(mlaconstituency);
+    
+  var position=function(data, status){
+        console.log(data);
+        $scope.getposition=data;
+    };
+   RestService.position().success(position);
+    
+    var state=function(data, status){
+        console.log(data);
+        $scope.getstate=data;
+    };
+   RestService.state().success(state);
+    
+    var video=function(data, status){
+        console.log(data);
+        $scope.getvideo=data;
+    };
+   RestService.video().success(video);
+    
+    
+    var insertvotesuccess=function(data,status){
+      console.log(data);
+          
+      };
+      $scope.insertvote=function(data){
+      console.log("Insert button is clicked");
+          RestService.insertvote(data).success(insertvotesuccess);
+          //RestService.viewall().success(viewsuccess);
+      };
+    
+    var insertuserinfosuccess=function(data,status){
+      console.log(data);
+          
+      };
+      $scope.insertuserinfo=function(data){
+      console.log("Insert button is clicked");
+          RestService.insertuserinfo(data).success(insertuserinfosuccess);
+          //RestService.viewall().success(viewsuccess);
+      };
+    
+    var insertmembershipsuccess=function(data,status){
+      console.log(data);
+          
+      };
+      $scope.insertmembership=function(data){
+      console.log("InsertMembership button is clicked");
+          RestService.insertmembership(data).success(insertmembershipsuccess);
+          //RestService.viewall().success(viewsuccess);
+      };
+
+    
+    
   // Create the login modal that we will use later
   $ionicModal.fromTemplateUrl('templates/login.html', {
     scope: $scope
@@ -108,7 +183,7 @@ angular.module('starter.controllers', [])
 .controller('PhotosCtrl', function($scope, $stateParams) {
 })
 
-.controller('PhotosInnerCtrl', function($scope, $stateParams, $ionicSlideBoxDelegate) {
+.controller('PhotosInnerCtrl', function($scope, $stateParams, $ionicSlideBoxDelegate,$routProvider) {
 })
 
 .controller('FacebookCtrl', function($scope, $stateParams) {

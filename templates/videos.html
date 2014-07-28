@@ -1,19 +1,12 @@
 <ion-view title="Video Gallery">
    
     <ion-content class="has-header">
-
         <div class="list">
-            <div class="item padding">
-                <p>Maharashtra Chief Minister Speech</p>
-                <iframe style="overflow:hidden;width:100%;overflow:hidden;width:100%" width="100%" src="http://www.youtube.com/embed/3TKgMR1vf8w" frameborder="0" allowfullscreen></iframe>
-
-                
+            <div class="item padding" ng-repeat="val in getvideo">
+                <p>{{val.title}}</p>
+                <iframe style="overflow:hidden;width:100%;overflow:hidden;width:100%" width="100%" src="{{val.video}}" frameborder="0" allowfullscreen></iframe>
             </div>
-            <div class="item padding">
-                <p>Maharashtra Chief Minister Speech</p>
-                <iframe style="overflow:hidden;width:100%;overflow:hidden;width:100%" width="100%" src="http://www.youtube.com/embed/3TKgMR1vf8w" frameborder="0" allowfullscreen></iframe>
-                
-            </div>
+            
         </div>
     </ion-content>
 </ion-view>

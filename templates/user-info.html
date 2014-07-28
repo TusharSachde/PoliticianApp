@@ -1,17 +1,21 @@
 <div class="modal">
     <ion-header-bar class="bar bar-politics">
         <h1 class="title politics">Register</h1> 
+        <div class="buttons">
+      <button class="button button-clear button-politics" ng-click="closeLogin()">Close</button>
+    </div>
     </ion-header-bar>
     <ion-content>
             <div class="list">
                 <label class="item item-input">
-                    <input type="email" ng-model="username" placeholder="Name">
+                    <input type="email" ng-model="userinfo.username" placeholder="Name">
                 </label>
                 <label class="item item-input">
-                    <input type="tel" ng-model="usernumber" placeholder="Phone Number">
+                    <input type="tel" ng-model="userinfo.phoneno" placeholder="Phone Number">
                 </label>
                 <label class="item">
-                    <button class="button button-block button-politics" type="submit">Register</button>
+                    <a href="#/app/home" ng-click="insertuserinfo(userinfo)">
+                    <button class="button button-block button-politics" ng-click="">Register</button></a>
                 </label>
             </div>
         </form>
