@@ -117,7 +117,7 @@ angular.module('starter', ['ionic', 'starter.controllers','restservice'])
       views: {
         'menuContent' :{
             templateUrl: "templates/constituency.html",
-            controller: 'HomeCtrl'
+            controller: 'VoteCtrl'
         }
       }
     })
@@ -127,7 +127,7 @@ angular.module('starter', ['ionic', 'starter.controllers','restservice'])
       views: {
         'menuContent' :{
             templateUrl: "templates/party.html",
-            controller: 'HomeCtrl'
+            controller: 'VoteCtrl'
         }
       }
     })
