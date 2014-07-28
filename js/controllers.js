@@ -73,6 +73,33 @@ angular.module('starter.controllers', [])
 })
 
 .controller('ArticleInsideCtrl', function($scope, $stateParams) {
+    $scope.walldata=[];
+    $scope.isrefresh=false;
+    var db = openDatabase('mydb', '1.0', 'appdb', 2 * 1024 * 1024);
+    db.transaction(function (tx) {  
+        tx.executeSql('CREATE TABLE IF NOT EXISTS WALL (id unique, title,userdata)');
+        //tx.executeSql('INSERT INTO WALL (id, title,userdata) VALUES (1, "foobar","Android")');
+    });
+    db.transaction(function (tx) {
+        tx.executeSql('SELECT * FROM WALL', [], function (tx, results) {
+            var len = results.rows.length, i;
+            
+            for (i = 0; i < len; i++){
+                $scope.walldata.push(results.rows.item(i));
+               console.log(results.rows.item(i) );
+                
+            }
+            
+        }, null);
+    });
+    
+    
+    $scope.$on('$viewContentLoaded', function () {
+        console.log("content loaded");
+        
+    });
+    
+    
 })
 
 .controller('ScheduleCtrl', function($scope, $stateParams) {

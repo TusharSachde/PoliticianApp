@@ -1,27 +1,12 @@
 <ion-view title="Wall">
     <ion-content class="has-header">
+        <h1 ng-hide="isrefresh" ng-click="isrefresh=true;">Refresh</h1>
         <div class="list">
-            <div class="item item-button-right">
-                <span id="result">Hi this is message</span>
-                <button class="copyButton button button-light">
-                    <i class="icon ion-clipboard"></i>
-                </button>
+            
+            <div class="item" ng-repeat="wallsingle in walldata">
+                <h1>{{wallsingle.title}}</h1><p>{{wallsingle.userdata}}</p>
             </div>
-            <div class="item">
-                <img src="img/ionic.png" width="200">
-            </div>
-            <div class="item">
-                We have diffrent type
-            </div>
-            <div class="item">
-                Message two
-            </div>
-            <div class="item">
-                Message three
-            </div>
-            <div class="item">
-                Message four
-            </div>
+            
         </div>
     </ion-content>
 </ion-view>
