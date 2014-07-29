@@ -27,19 +27,10 @@ function registerPushwooshAndroid() {
 		{
             var title = event.notification.title;
             var userData = event.notification.userdata;
-            
-            
-            var db = openDatabase('mydb', '1.0', 'appdb', 2 * 1024 * 1024);
-            
-           
-            
+
             //dump custom data to the console if it exists
             if(typeof(userData) != "undefined") {
 				console.warn('user data: ' + JSON.stringify(userData));
-                db.transaction(function (tx) {  
-                    tx.executeSql('CREATE TABLE IF NOT EXISTS WALL (id unique, title,userdata)');
-                    tx.executeSql('INSERT INTO WALL (id, title,userdata) VALUES (1, "'+title+'","'+userData+'")');
-                });
 			}
 
 			//and show alert
