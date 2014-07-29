@@ -1,6 +1,12 @@
 <ion-view title="Wall">
     <ion-content class="has-header">
-        <h1 ng-hide="isrefresh" ng-click="isrefresh=true;">Refresh</h1>
+<!--
+        <ion-nav-buttons side="right">
+            <button class="button">Click to refresh</button>
+        </ion-nav-buttons>
+        
+-->
+        <button class="button button-block button-light" ng-hide="isrefresh" ng-click="isrefresh=true;">Click to refresh</button>
         <div class="list">
             
             <div class="item" ng-repeat="wallsingle in walldata">
