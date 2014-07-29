@@ -17,7 +17,11 @@
     <gap:plugin name="com.pushwoosh.plugins.pushwoosh" version="3.0.2" />
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     <icon src="logo-512.png" />   
+=======
+
+>>>>>>> parent of 31d9a6d... New UI
 =======
 
 >>>>>>> parent of 31d9a6d... New UI
