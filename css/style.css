@@ -72,6 +72,7 @@ a {
     vertical-align: middle;
     border-radius: 3px;
     margin-right: 5px;
+<<<<<<< HEAD
 }
 .img-half {
     width: 50%;
@@ -94,4 +95,6 @@ a {
 }
 .grid p {
     color: #898989;
+=======
+>>>>>>> parent of 31d9a6d... New UI
 }
