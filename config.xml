@@ -15,16 +15,9 @@
     <preference name="phonegap-version" value="3.3.0" />
     <gap:plugin name="org.apache.cordova.device" />    
     <gap:plugin name="com.pushwoosh.plugins.pushwoosh" version="3.0.2" />
-
-<<<<<<< HEAD
-<<<<<<< HEAD
+    
+    
     <icon src="logo-512.png" />   
-=======
-
->>>>>>> parent of 31d9a6d... New UI
-=======
-
->>>>>>> parent of 31d9a6d... New UI
     <gap:splash src="img/splash.png" />
     <preference name="fullscreen" value="false" />
     <preference name="orientation" value="portrait" />
