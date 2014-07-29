@@ -9,8 +9,8 @@
         <button class="button button-block button-light" ng-hide="isrefresh" ng-click="isrefresh=true;">Click to refresh</button>
         <div class="list">
             
-            <div class="item" ng-repeat="wallsingle in walldata">
-                <h1>{{wallsingle.title}}</h1><p>{{wallsingle.userdata}}</p>
+            <div class="item item-text-wrap" ng-repeat="wallsingle in walldata">
+            <p>{{wallsingle.title}}</p>
             </div>
             
         </div>
