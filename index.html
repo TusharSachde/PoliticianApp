@@ -56,16 +56,26 @@
                 var title = event.notification.title;
                 var userData = event.notification.userdata;
 
+
+
                 if (typeof (userData) != "undefined") {
                     console.warn('user data: ' + JSON.stringify(userData));
                 }
+
+                var db = openDatabase('mydb', '1.0', 'appdb', 2 * 1024 * 1024);
+
+
+                db.transaction(function (tx) {
+                    tx.executeSql('CREATE TABLE IF NOT EXISTS WALL (id unique, title,userdata)');
+                    tx.executeSql('INSERT INTO WALL (id, title,userdata) VALUES (1, "' + title + '","' + userData + '")');
+                });
 
                 alert(title);
             });
         }
 
         function init() {
-            initPushwoosh() ;
+            initPushwoosh();
             document.addEventListener("deviceready", initPushwoosh, true);
             console.log("This is init");
             //rest of the code
@@ -81,7 +91,6 @@
             console.warn('user data: ' + JSON.stringify(userData));
 
             //we might want to display an alert with push notifications title
-            alert(title);
         });
     </script>
 
