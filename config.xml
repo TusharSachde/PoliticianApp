@@ -12,7 +12,7 @@
     <author href="http://wohlig.com" email="info@wohlig.com">
         Wohlig Technologies
     </author>
-    <preference name="phonegap-version" value="3.0.0" />
+    <preference name="phonegap-version" value="3.3.0" />
     <gap:plugin name="org.apache.cordova.device" />    
     <gap:plugin name="com.pushwoosh.plugins.pushwoosh" version="3.0.2" />
 

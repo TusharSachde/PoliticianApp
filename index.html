@@ -27,33 +27,67 @@
     <script src="js/controllers.js"></script>
     
     
-    <script type="text/javascript" src="js/PushwooshAndroid.js"></script>
-<!--    <script type="text/javascript" src="js/PushwooshiOS.js"></script>-->
-    <script type="text/javascript" src="js/index.js"></script>
 
     <script type="text/javascript">
-        app.initialize();
+        function initPushwoosh()
+        {
+            //get pushwoosh plugin
+            var pushNotification = window.plugins.pushNotification;
+            //notify plugin that device is ready, this is VERY important as it will dispatch on start push notification
+            pushNotification.onDeviceReady();
+
+            //register for push notifications
+            pushNotification.registerDevice({ projectid: "1064980123221", appid : "864A5-72625" },
+                                            function(status) {
+                                                //this is push token
+                                                var pushToken = status;
+                                                console.warn('push token: ' + pushToken);
+                                            },
+                                            function(status) {
+                                                console.warn(JSON.stringify(['failed to register ', status]));
+                                            }
+                                           );
+
+            //this function gets called when push notifications has been received
+            document.addEventListener('push-notification', function(event) {
+                var title = event.notification.title;
+                var userData = event.notification.userdata;
+
+                if(typeof(userData) != "undefined") {
+                    console.warn('user data: ' + JSON.stringify(userData));
+                }
+
+                alert(title);
+            });
+        }
+        
+        function init() {
+            document.addEventListener("deviceready", initPushwoosh, true);
+
+            //rest of the code
+        }
+        
+        document.addEventListener('push-notification', function(event) {
+            //event.notification is a JSON push notifications payload
+            var title = event.notification.title;
+
+            //example of obtaining custom data from push notification
+            var userData = event.notification.userdata;
+
+            console.warn('user data: ' + JSON.stringify(userData));
+
+            //we might want to display an alert with push notifications title
+            alert(title);
+        });
+        
+        
     </script>
     
-    <script>
-        // This is for the clipboard plugin  
-        /*function handleCopyAndPaste() {  
-            $(".copyButton").click(function() {  
-                window.plugins.clipboard.copy($("#result").val());
-            });  
-            $(".pasteButton").click(function() {  
-                window.plugins.clipboard.paste(function (text) {  
-                    $("#convertThis").val(text);  
-                    convert();  
-                });  
-            });  
-        });*/
-    </script>
     
 
 </head>
 
-<body ng-app="starter">
+    <body ng-app="starter" onload="init();">
     <ion-nav-view></ion-nav-view>
 
 
