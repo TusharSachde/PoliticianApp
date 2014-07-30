@@ -93,7 +93,7 @@ angular.module('starter', ['ionic', 'starter.controllers','restservice'])
     })
   
     .state('app.photos-inner', {
-        url: "/photos/inner/:name",
+        url: "/photos/inner",
       views: {
         'menuContent' :{
             templateUrl: "templates/photos-inner.html",
