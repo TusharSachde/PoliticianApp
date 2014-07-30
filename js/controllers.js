@@ -165,6 +165,7 @@ var startercontrollers = angular.module('starter.controllers', ['restservice'])
     $scope.isrefresh = false;
 
     $scope.refreshwall = function () {
+        $scope.walldata = [];
         var db = openDatabase('mydb', '1.0', 'appdb', 2 * 1024 * 1024);
         db.transaction(function (tx) {
             tx.executeSql('CREATE TABLE IF NOT EXISTS WALL (id unique, title,userdata)');
