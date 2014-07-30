@@ -71,17 +71,21 @@
 
                         for (i = 0; i < len; i++){
                             newid=results.rows.item(i).id;
+                            newid++;
+                            
+                            db.transaction(function (tx) {
+                                tx.executeSql('CREATE TABLE IF NOT EXISTS WALL (id unique, title,userdata)');
+                                tx.executeSql('INSERT INTO WALL (id, title,userdata) VALUES ('+newid+', "' + title + '","' + userData + '")');
+                            });
+                            console.log(newid);
                         }
 
                     }, null);
                 });
                 
-                console.log(newid);
+               
 
-                db.transaction(function (tx) {
-                    tx.executeSql('CREATE TABLE IF NOT EXISTS WALL (id unique, title,userdata)');
-                    tx.executeSql('INSERT INTO WALL (id, title,userdata) VALUES ('+newid+', "' + title + '","' + userData + '")');
-                });
+                
                 
                 
                 
