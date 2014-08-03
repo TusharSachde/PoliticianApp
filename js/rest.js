@@ -1,4 +1,4 @@
-var apiServer = 'http://emahapolitician.in/politician/index.php';
+var apiServer = 'http://emahapolitician.in/politician/politician/index.php';
 var restservice = angular.module('restservice', [])
 
 .factory('RestService', function ($http) {
