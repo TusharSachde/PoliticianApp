@@ -65,6 +65,7 @@ var startercontrollers = angular.module('starter.controllers', ['restservice'])
     $scope.insertuserinfo = function (data) {
         console.log("Insert button is clicked");
         RestService.insertuserinfo(data).success(insertuserinfosuccess);
+        $scope.modal.hide();
         //RestService.viewall().success(viewsuccess);
     };
 
