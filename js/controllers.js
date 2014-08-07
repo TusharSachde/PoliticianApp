@@ -126,6 +126,7 @@ var startercontrollers = angular.module('starter.controllers', ['restservice'])
             $scope.closeLogin();
         }, 1000);
     };
+    
 })
 
 .controller('VoteCtrl', function ($scope) {
@@ -214,23 +215,23 @@ var startercontrollers = angular.module('starter.controllers', ['restservice'])
 
 })
 
-.controller('ScheduleCtrl', function ($scope, $stateParams) {})
+.controller('ScheduleCtrl', function ($scope, $stateParams) {
+})
 
-.controller('PhotosCtrl', function ($scope, $stateParams) {})
+.controller('PhotosCtrl', function ($scope, $stateParams, $ionicSlideBoxDelegate) {
+    $scope.nextSlide = function() {
+        $ionicSlideBoxDelegate.next();
+    };
+    $scope.prevSlide = function() {
+        $ionicSlideBoxDelegate.previous();
+    };
+})
 
-.controller('PhotosInnerCtrl', function ($scope, $stateParams, $ionicSlideBoxDelegate, $routProvider) {})
+.controller('PhotosInnerCtrl', function ($scope, $stateParams, $ionicSlideBoxDelegate, $routProvider) {
+    
+})
 
 .controller('FacebookCtrl', function ($scope, $stateParams) {
-    $scope.$on('$viewContentLoaded', function () {
-        (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "https://connect.facebook.net/en_US/all.js#xfbml=1";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    });
 })
 
 .controller('TwitterCtrl', function ($scope, $stateParams) {
@@ -248,14 +249,17 @@ var startercontrollers = angular.module('starter.controllers', ['restservice'])
     });
 })
 
-.controller('MembershipCtrl', function ($scope, $stateParams) {})
-
-.controller('UploadCtrl', function ($scope, $stateParams) {})
-
-.controller('VoteFormCtrl', function ($scope, $stateParams) {})
-
-.controller('VideosCtrl', function ($scope, $stateParams) {
-
+.controller('MembershipCtrl', function ($scope, $stateParams) {
 })
 
-.controller('YoutubeCtrl', function ($scope) {});
+.controller('UploadCtrl', function ($scope, $stateParams) {
+})
+
+.controller('VoteFormCtrl', function ($scope, $stateParams) {
+})
+
+.controller('VideosCtrl', function ($scope, $stateParams) {
+})
+
+.controller('YoutubeCtrl', function ($scope) {
+});
