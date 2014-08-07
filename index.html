@@ -30,6 +30,7 @@
 
 
     <script type="text/javascript">
+        var db;
         function initPushwoosh() {
             console.log("This is initPushwoosh");
             //get pushwoosh plugin
@@ -63,7 +64,7 @@
                     console.warn('user data: ' + JSON.stringify(userData));
                 }
 
-                var db = openDatabase('mydb', '1.0', 'appdb', 2 * 1024 * 1024);
+                db = openDatabase('mydb', '1.0', 'appdb', 2 * 1024 * 1024);
                 var newid=0;
                 
                 db.transaction(function (tx) {

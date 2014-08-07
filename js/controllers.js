@@ -146,8 +146,9 @@ var startercontrollers = angular.module('starter.controllers', ['restservice'])
   ];
 })
 
-.controller('HomeCtrl', function ($scope, $stateParams, $ionicModal) {
+.controller('HomeCtrl', function ($scope, $stateParams, $ionicModal,RestService) {
 
+    RestService.loadwall();
     $scope.loginData = {};
     var firstlogin = $.jStorage.get("firstlogin");
     // Create the login modal that we will use later
@@ -180,37 +181,25 @@ var startercontrollers = angular.module('starter.controllers', ['restservice'])
 
 .controller('ArticleCtrl', function ($scope, $stateParams) {})
 
-.controller('ArticleInsideCtrl', function ($scope, $stateParams) {
+.controller('ArticleInsideCtrl', function ($scope, $stateParams, $location,RestService) {
     $scope.walldata = [];
     $scope.isrefresh = false;
 
     $scope.refreshwall = function () {
-        $scope.isrefresh = false;
-        $scope.walldata = [];
-        var db = openDatabase('mydb', '1.0', 'appdb', 2 * 1024 * 1024);
-        db.transaction(function (tx) {
-            tx.executeSql('CREATE TABLE IF NOT EXISTS WALL (id unique, title,userdata)');
-            //tx.executeSql('INSERT INTO WALL (id, title,userdata) VALUES (1, "foobar","Android")');
-        });
-        db.transaction(function (tx) {
-            tx.executeSql('SELECT * FROM WALL', [], function (tx, results) {
-                var len = results.rows.length,
-                    i;
-
-                for (i = 0; i < len; i++) {
-                    $scope.walldata.push(results.rows.item(i));
-                    console.log(results.rows.item(i));
-
-                }
-
-            }, null);
-        });
+        $scope.walldata=RestService.getwall();
     };
+    
 
     $scope.$on('$viewContentLoaded', function () {
         console.log("content loaded");
         $scope.refreshwall();
+        $location.path("/app/article/inside")
     });
+    $scope.clearwall=function() {
+        $scope.walldata=[];
+        RestService.clearwall();
+    };
+    
 
 
 })
