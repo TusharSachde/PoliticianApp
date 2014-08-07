@@ -3,13 +3,13 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
 
-    <name>Prithviraj Chavan</name>
+    <name>Vivek Pandit</name>
 
     <description>
         Politician's App
     </description>
 
-    <author href="http://wohlig.com" email="info@wohlig.com">
+    <author href="emahapolitician.in" email="info@wohlig.com">
         Wohlig Technologies
     </author>
     <preference name="phonegap-version" value="3.3.0" />
