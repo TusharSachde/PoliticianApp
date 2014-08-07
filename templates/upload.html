@@ -1,16 +1,20 @@
-<ion-view title="Upload">
+<ion-view title="Share">
     <ion-content class="has-header">
         <div class="padding">
-           <h1 class="politics text-center" style="font-size:90px"><i class="icon ion-paperclip"></i></h1>
+            <h1 class="politics text-center" style="font-size:90px"><i class="icon ion-paperclip"></i></h1>
             <h3>{{msg}}</h3>
-            <div class="list">
+            <form action="http://emahapolitician.in/politician/politician/index.php/upload/create" method="post"
+                  enctype="multipart/form-data">
                 <label class="item item-input">
-                    <textarea placeholder="Share with us" ng-model="image.text"></textarea>
+                    <textarea placeholder="Share with us" name="text"></textarea>
                 </label>
-                   
-            </div>
-            <button  ng-click="insertimage(image.text)" class="button button-block button-politics">Upload a file</button>
-            
+                <label for="file">Filename:</label>
+                <input type="file" name="file" id="file"><br>
+                <input type="submit" name="submit" value="Submit"  class="button button-block button-politics">
+            </form>
+
+
+
         </div>
     </ion-content>
 </ion-view>
