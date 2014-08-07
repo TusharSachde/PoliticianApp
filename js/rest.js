@@ -11,6 +11,9 @@ var restservice = angular.module('restservice', [])
         region: function () {
             return $http.get(apiServer+"/region/find",{});
         },
+        scheduler: function () {
+            return $http.get(apiServer+"/scheduler/find",{});
+        },
         mpconstituency: function () {
             return $http.get(apiServer+"/mpconstituency/find",{});
         },
@@ -51,6 +54,11 @@ var restservice = angular.module('restservice', [])
         insertvote: function(data){
     console.log(data);
             return $http.get(apiServer+"/vote/create",{params:data});
+    },
+        insertimage: function(data,image){
+    console.log(data);
+    console.log(image);
+            return $http.get(apiServer+"/upload/create?text="+data+"&image="+image,{});
     },
         viewid: function(id){
         console.log(id);

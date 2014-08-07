@@ -8,14 +8,14 @@
     <ion-content>
             <div class="list">
                 <label class="item item-input">
-                    <input type="email" ng-model="userinfo.username" placeholder="Name">
+                    <input type="email" ng-model="userinfo.username" placeholder="Emailid" required>
                 </label>
                 <label class="item item-input">
-                    <input type="tel" ng-model="userinfo.phoneno" placeholder="Phone Number">
+                    <input type="tel" ng-model="userinfo.phoneno" placeholder="Phone Number" required>
                 </label>
                 <label class="item">
                     <a href="#/app/home" ng-click="insertuserinfo(userinfo)">
-                    <button class="button button-block button-politics">Register</button></a>
+                    <button type="submit" ng-click="closeLogin()" class="button button-block button-politics">Register</button></a>
                 </label>
             </div>
         </form>

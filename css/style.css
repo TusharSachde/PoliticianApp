@@ -75,8 +75,8 @@ a {
 }
 .img-half {
     width: 50%;
-    float: left;
-    padding: 0 10px 10px 0px;
+    display: block;
+    margin: 0 auto 5px;
 }
 .grid a {
     color: #F79957;
@@ -94,4 +94,13 @@ a {
 }
 .grid p {
     color: #898989;
+}
+.loader {
+    color:#898989 !important;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 50%;
+}
+.loader i {
+    font-size: 40px;
 }

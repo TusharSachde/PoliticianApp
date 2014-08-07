@@ -1,9 +1,15 @@
 <ion-view title="Schedule">
     
 <ion-content class="has-header">
-    <div class="list">
+    <div class="list"  ng-repeat="val in getscheduler">
 
         <a class="item" href="#">
+            {{val.name}}
+            <span class="item-note">
+                {{val.timestamp}}
+            </span>
+        </a>
+      <!--  <a class="item" href="#">
             13 July 2014, Monday
             <span class="item-note">
                 3:00 AM
@@ -15,13 +21,7 @@
                 3:00 AM
             </span>
         </a>
-        <a class="item" href="#">
-            13 July 2014, Monday
-            <span class="item-note">
-                3:00 AM
-            </span>
-        </a>
-
+    -->
     </div>
 </ion-content>
 </ion-view>

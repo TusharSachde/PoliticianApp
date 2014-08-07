@@ -2,14 +2,16 @@
     <ion-content class="has-header">
         <div class="padding">
            <h1 class="politics text-center" style="font-size:90px"><i class="icon ion-paperclip"></i></h1>
+            <h3>{{msg}}</h3>
             <div class="list">
                 <label class="item item-input">
-                    <textarea placeholder="Share with us"></textarea>
+                    <textarea placeholder="Share with us" ng-model="image.text"></textarea>
                 </label>
                    
             </div>
-            <input type="file">
-            <button class="button button-block button-politics">Upload a file</button>
+            <iframe class="myiframe" src="templates/f1.php" width="700px" height="70px" border="0"> </iframe>
+            <button  ng-click="insertimage(image.text)" class="button button-block button-politics">Upload a file</button>
+            
         </div>
     </ion-content>
 </ion-view>

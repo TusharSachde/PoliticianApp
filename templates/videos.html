@@ -1,18 +1,33 @@
-<ion-view title="Video Gallery">  
+<script type="text/javascript">
+function AppCtrl($scope, $sce) {
+    // ...
+    $scope.setProject = function (id) {
+      $scope.currentProject = $scope.projects[id];
+      $scope.currentProjectUrl = $sce.trustAsResourceUrl($scope.currentProject.url);
+    }
+}
+</script>
+   <ion-view title="Video Gallery">  
     <ion-content class="has-header">
         <div class="list">
-<!--
             <div class="item padding" ng-repeat="val in getvideo">
                 <p>{{val.title}}</p>
-                <iframe style="overflow:hidden;width:100%;overflow:hidden;width:100%" width="100%" src="{{val.video}}" frameborder="0" allowfullscreen></iframe>
+                
+              <iframe ng-src="+{{val.video}}+|trusted" style="overflow:hidden;width:100%;overflow:hidden;width:100%" width="100%" frameborder="0" allowfullscreen></iframe>
+              <!--  
+              <iframe ng-src="{{val.video}}"> </iframe>
+              
+               <video width="320" height="240" controls>
+                  <source src="http://www.youtube.com/embed/3TKgMR1vf8w" type="video/mp4">
+                </video>
+                <embed-video data-ng-href="http://www.youtube.com/embed/3TKgMR1vf8w" controls=0 ><a href="http://www.youtube.com/embed/3TKgMR1vf8w"></a></embed-video>-->
             </div>
--->
-           
+           <!--
             <div class="item padding">
                 <p>Prithviraj Chavan</p>
                 <iframe style="overflow:hidden;width:100%;overflow:hidden;width:100%" width="100%" height="250" src="http://www.youtube.com/embed/3TKgMR1vf8w" frameborder="0" allowfullscreen></iframe>
             </div>
-            
+            -->
         </div>
     </ion-content>
 </ion-view>
