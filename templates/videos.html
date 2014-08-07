@@ -13,21 +13,8 @@ function AppCtrl($scope, $sce) {
             <div class="item padding" ng-repeat="val in getvideo">
                 <p>{{val.title}}</p>
                 
-              <iframe ng-src="+{{val.video}}+|trusted" style="overflow:hidden;width:100%;overflow:hidden;width:100%" width="100%" frameborder="0" allowfullscreen></iframe>
-              <!--  
-              <iframe ng-src="{{val.video}}"> </iframe>
-              
-               <video width="320" height="240" controls>
-                  <source src="http://www.youtube.com/embed/3TKgMR1vf8w" type="video/mp4">
-                </video>
-                <embed-video data-ng-href="http://www.youtube.com/embed/3TKgMR1vf8w" controls=0 ><a href="http://www.youtube.com/embed/3TKgMR1vf8w"></a></embed-video>-->
-            </div>
-           <!--
-            <div class="item padding">
-                <p>Prithviraj Chavan</p>
-                <iframe style="overflow:hidden;width:100%;overflow:hidden;width:100%" width="100%" height="250" src="http://www.youtube.com/embed/3TKgMR1vf8w" frameborder="0" allowfullscreen></iframe>
-            </div>
-            -->
+                <iframe ng-src="http://www.youtube.com/embed/3TKgMR1vf8w" style="overflow:hidden;height:300px;width:100%;" width="100%" frameborder="0" allowfullscreen></iframe>
+             </div>
         </div>
     </ion-content>
 </ion-view>
