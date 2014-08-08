@@ -13,7 +13,7 @@ function AppCtrl($scope, $sce) {
             <div class="item padding" ng-repeat="val in getvideo">
                 <p>{{val.title}}</p>
                 
-                <iframe id="ytplayer" type="text/html" ng-src="http://www.youtube.com/embed/I2iUelG5pnY?rel=0" style="overflow:hidden;height:200px;width:100%;" width="100%" frameborder="0" allowfullscreen></iframe>
+                <iframe id="ytplayer" type="text/html" src="{{val.video|trusted}}" style="overflow:hidden;height:200px;width:100%;" width="100%" frameborder="0" allowfullscreen></iframe>
              </div>
         </div>
     </ion-content>

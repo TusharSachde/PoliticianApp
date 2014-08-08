@@ -214,4 +214,11 @@ angular.module('starter', ['ionic', 'starter.controllers','restservice'])
     
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/home');
-});
+})
+
+
+.filter('trusted', ['$sce', function ($sce) {
+    return function(url) {
+        return $sce.trustAsResourceUrl(url);
+    };
+}]);

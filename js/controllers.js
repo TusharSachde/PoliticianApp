@@ -75,17 +75,7 @@ var startercontrollers = angular.module('starter.controllers', ['restservice'])
         //RestService.viewall().success(viewsuccess);
     };
 
-    var insertuserinfosuccess = function (data, status) {
-        console.log(data);
-        $.jStorage.set("firstlogin", 1);
-        $scope.closeLogin();
-    };
-    $scope.insertuserinfo = function (data) {
-        console.log("Insert button is clicked");
-        RestService.insertuserinfo(data).success(insertuserinfosuccess);
-        $scope.modal.hide();
-        //RestService.viewall().success(viewsuccess);
-    };
+   
 
     var insertmembershipsuccess = function (data, status) {
         console.log(data);
@@ -107,9 +97,9 @@ var startercontrollers = angular.module('starter.controllers', ['restservice'])
     });
 
     // Triggered in the login modal to close it
-    $scope.closeLogin = function () {
-        $scope.modal.hide();
-    },
+    $scope.closeLogin = function (userinfo) {
+        
+    };
 
     // Open the login modal
     $scope.login = function () {
@@ -161,10 +151,28 @@ var startercontrollers = angular.module('starter.controllers', ['restservice'])
 
         }
     });
-
+    
+    
+    var insertuserinfosuccess = function (data, status) {
+        console.log(data);
+        $.jStorage.set("firstlogin", 1);
+    };
+   
+    $scope.alertnew='';
     // Triggered in the login modal to close it
-    $scope.closeLogin = function () {
-        $scope.modal.hide();
+    $scope.closeLogin = function (data) {
+        console.log(data)
+        $scope.alertnew="Invalid Input";
+        if(data.username && data.phoneno)
+        {
+            RestService.insertuserinfo(data).success(insertuserinfosuccess);
+            $scope.modal.hide();
+            $scope.alertnew="";
+        }
+        else
+        {
+            
+        }
     },
 
     // Open the login modal
@@ -241,7 +249,23 @@ var startercontrollers = angular.module('starter.controllers', ['restservice'])
 .controller('MembershipCtrl', function ($scope, $stateParams) {
 })
 
-.controller('UploadCtrl', function ($scope, $stateParams) {
+.controller('UploadCtrl', function ($scope, $stateParams,$ionicPopup, $timeout) {
+    $scope.showPopup = function() {
+        $scope.data = {}
+
+        // An elaborate, custom popup
+        var myPopup = $ionicPopup.show({
+            template: '',
+            title: 'Share',
+            scope: $scope,
+            buttons: [
+                { text: 'Cancel' },
+            ]
+                });
+                myPopup.then(function(res) {
+                console.log('Tapped!', res);
+                });
+                };
 })
 
 .controller('VoteFormCtrl', function ($scope, $stateParams) {
