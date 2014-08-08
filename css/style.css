@@ -108,3 +108,6 @@ a {
     padding: 10px 15px;
     text-align: justify;
 }
+.text-justify {
+    text-align: justify;
+}
