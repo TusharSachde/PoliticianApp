@@ -63,7 +63,7 @@ angular.module('starter', ['ionic', 'starter.controllers','restservice'])
   
    
     .state('app.article-inside', {
-        url: "/article/inside",
+        url: "/wall",
       views: {
         'menuContent' :{
             templateUrl: "templates/article-inside.html",

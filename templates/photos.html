@@ -1,18 +1,5 @@
 <ion-view title="Photo Gallery">
     <ion-content class="has-header">
-
-<!--
-        <div class="list">
-            <div class="row text-center">
-                <div class="col col-33 padding" ng-repeat="val in getimage">
-                    <a href="#/app/photos/inner?name={{val.name}}">
-                        <img src="img/uploads/{{val.name}}" class="full-image">
-                    </a>
-                    <p>{{val.title}}</p>
-                </div>
-
-            </div>
--->
             
         <ion-slide-box show-pager="false" auto-play="false">
                 <ion-slide>
@@ -22,32 +9,10 @@
                     <img src="img/uploads/p2.jpg" class="full-image">
                 </ion-slide>
                 <ion-slide ng-repeat="val in getimage">
-                    <img src="img/uploads/{{val.name}}" class="full-image">
+                    <img src="http://emahapolitician.in/politician/politician/uploads/{{val.name}}" class="full-image">
                 </ion-slide>
             </ion-slide-box>
 
-<!--
-            <div class="row text-center">
-                <div class="col col-33 padding">
-                    <a href="#/app/photos/inner">
-                        <img src="img/uploads/cm1.jpg" class="full-image">
-                    </a>
-                    <p>Prithviraj Chavan</p>
-                </div>
-                <div class="col col-33 padding">
-                    <a href="#/app/photos/inner">
-                        <img src="img/uploads/cm1.jpg" class="full-image">
-                    </a>
-                    <p>Prithviraj Chavan</p>
-                </div>
-                <div class="col col-33 padding">
-                    <a href="#/app/photos/inner">
-                        <img src="img/uploads/cm1.jpg" class="full-image">
-                    </a>
-                    <p>Prithviraj Chavan</p>
-                </div>
-            </div>
--->
         </div>
     </ion-content>
 </ion-view>

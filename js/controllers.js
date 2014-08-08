@@ -3,18 +3,6 @@ var startercontrollers = angular.module('starter.controllers', ['restservice'])
 .controller('AppCtrl', function ($scope, $ionicModal, $timeout, RestService) {
     // Form data for the login modal
     $scope.loginData = {};
-
-    var insertimagesuccess = function (data, status) {
-        $scope.msg="Uploaded Successfuly";
-        console.log(data);
-
-    };
-    $scope.insertimage = function (data) {
-        $scope.image= $(".myiframe").contents().find("body img").attr("src");
-        console.log($scope.image);
-        RestService.insertimage(data,$scope.image).success(insertimagesuccess);
-        //RestService.viewall().success(viewsuccess);
-    };
     
     var image = function (data, status) {
         console.log(data);
@@ -201,7 +189,7 @@ var startercontrollers = angular.module('starter.controllers', ['restservice'])
     $scope.$on('$viewContentLoaded', function () {
         console.log("content loaded");
         $scope.refreshwall();
-        $location.path("/app/article/inside")
+        $location.path("/app/wall")
     });
     $scope.clearwall=function() {
         $scope.walldata=[];
