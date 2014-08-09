@@ -173,7 +173,8 @@ var startercontrollers = angular.module('starter.controllers', ['restservice'])
 
 })
 
-.controller('AboutCtrl', function ($scope, $stateParams, $ionicModal) {})
+.controller('AboutCtrl', function ($scope, $stateParams, $ionicModal, $ionicTabsDelegate) {
+})
 
 .controller('ArticleCtrl', function ($scope, $stateParams) {})
 
