@@ -93,6 +93,9 @@
                 
 
             });
+            
+            pushNotification.setMultiNotificationMode();
+            pushNotification.setEnableLED(true);
         }
 
         function init() {
@@ -112,6 +115,7 @@
             console.warn('user data: ' + JSON.stringify(userData));
 
             //we might want to display an alert with push notifications title
+            
         });
     </script>
 
