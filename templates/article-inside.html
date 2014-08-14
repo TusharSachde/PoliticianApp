@@ -5,15 +5,15 @@
         </ion-nav-buttons>
         <div class="list">
             
-            <div class="item item-text-wrap" ng-repeat="wallsingle in walldata | orderBy:wallsingle.id:reverse">
-            <p>{{wallsingle.title}}</p><a ng-click="sharetext(wallsingle.title)">Share</a>
+            <div class="item item-text-wrap item-button-right" ng-repeat="wallsingle in walldata | orderBy:wallsingle.id:reverse">
+                <p>{{wallsingle.title}}</p><a ng-click="sharetext(wallsingle.title)" class="button button-stable button-clear"><i class="icon ion-android-share"></i></a>
             </div>
             
 <!--
             <div class="item item-button-right">
                 <img src="img/ionic.png" class="img-wall">
                 <a class="button button-stable button-clear" href="img/ionic.png" download="ionic.png">
-                    <i class="icon ion-archive"></i>
+                    <i class="icon ion-android-share"></i>
                 </a>
             </div>
 -->
