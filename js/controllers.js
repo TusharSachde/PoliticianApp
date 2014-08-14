@@ -128,7 +128,7 @@ var startercontrollers = angular.module('starter.controllers', ['restservice'])
 
     
    
-    RestService.loadwall();
+    //RestService.loadwall();
     
     
     
