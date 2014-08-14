@@ -6,7 +6,7 @@
         <div class="list">
             
             <div class="item item-text-wrap" ng-repeat="wallsingle in walldata | orderBy:wallsingle.id:reverse">
-            <p>{{wallsingle.title}}</p>
+            <p>{{wallsingle.title}}</p><a ng-click="sharetext(wallsingle.title)"></a>
             </div>
             
 <!--

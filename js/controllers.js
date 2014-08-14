@@ -181,6 +181,10 @@ var startercontrollers = angular.module('starter.controllers', ['restservice'])
 .controller('ArticleInsideCtrl', function ($scope, $stateParams, $location,RestService) {
     $scope.walldata = [];
     $scope.isrefresh = false;
+    
+    $scope.sharetext=function(text) {
+        window.plugins.socialsharing.share(text);
+    };
 
     $scope.refreshwall = function () {
         $scope.walldata=RestService.getwall();
