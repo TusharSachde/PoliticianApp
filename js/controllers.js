@@ -126,7 +126,16 @@ var startercontrollers = angular.module('starter.controllers', ['restservice'])
 
 .controller('HomeCtrl', function ($scope, $stateParams, $ionicModal,RestService) {
 
+    
+   
     RestService.loadwall();
+    
+    
+    
+    $scope.$on('$viewContentLoaded', function () {
+        RestService.loadwall();
+    });
+    
     $scope.loginData = {};
     var firstlogin = $.jStorage.get("firstlogin");
     // Create the login modal that we will use later
