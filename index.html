@@ -79,6 +79,7 @@
                                 tx.executeSql('INSERT INTO WALL (id, title,userdata) VALUES ('+newid+', "' + title + '","' + userData + '")');
                             });
                             console.log(newid);
+                            location.replace("index.html");
                         }
 
                     }, null);
