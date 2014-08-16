@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.vivek.pandit" versionCode="10" version="1.0.0">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.vivek.pandit" versionCode="7" version="1.0.1">
 
     <name>Vivek Pandit</name>
 
@@ -12,7 +12,7 @@
     <author href="emahapolitician.in" email="info@wohlig.com">
         Wohlig Technologies
     </author>
-    <preference name="phonegap-version" value="3.5.0" />
+    <preference name="phonegap-version" value="2.5.0" />
     <gap:plugin name="org.apache.cordova.device" />
     <gap:plugin name="com.pushwoosh.plugins.pushwoosh" version="3.0.2" />
     <gap:plugin name="nl.x-services.plugins.socialsharing" version="4.3.0" />
