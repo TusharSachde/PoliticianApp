@@ -187,6 +187,7 @@ var startercontrollers = angular.module('starter.controllers', ['restservice'])
     $scope.walldata = [];
     $scope.isrefresh = false;
     RestService.loadwall();
+    
     $scope.sharetext=function(text) {
         window.plugins.socialsharing.share(text);
     };
