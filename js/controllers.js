@@ -190,6 +190,9 @@ var startercontrollers = angular.module('starter.controllers', ['restservice'])
     $scope.sharetext=function(text) {
         window.plugins.socialsharing.share(text);
     };
+    $scope.shareimage=function(image) {
+        window.plugins.socialsharing.share(null, null, image, null);
+    };
 
     $scope.refreshwall = function () {
        
