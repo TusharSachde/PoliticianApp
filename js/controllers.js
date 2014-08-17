@@ -5,60 +5,60 @@ var startercontrollers = angular.module('starter.controllers', ['restservice'])
     $scope.loginData = {};
     
     var image = function (data, status) {
-        console.log(data);
+        //console.log(data);
         $scope.getimage = data;
     };
     RestService.image().success(image);
 
     var region = function (data, status) {
-        console.log(data);
+        //console.log(data);
         $scope.getregion = data;
     };
     RestService.region().success(region);
 
     var scheduler = function (data, status) {
-        console.log(data);
+        //console.log(data);
         $scope.getscheduler = data;
     };
     RestService.scheduler().success(scheduler);
 
     var mpconstituency = function (data, status) {
-        console.log(data);
+        //console.log(data);
         $scope.getmpconstituency = data;
     };
     RestService.mpconstituency().success(mpconstituency);
 
     var mlaconstituency = function (data, status) {
-        console.log(data);
+        //console.log(data);
         $scope.getmlaconstituency = data;
     };
     RestService.mlaconstituency().success(mlaconstituency);
 
     var position = function (data, status) {
-        console.log(data);
+        //console.log(data);
         $scope.getposition = data;
     };
     RestService.position().success(position);
 
     var state = function (data, status) {
-        console.log(data);
+        //console.log(data);
         $scope.getstate = data;
     };
     RestService.state().success(state);
 
     var video = function (data, status) {
-        console.log(data);
+        //console.log(data);
         $scope.getvideo = data;
     };
     RestService.video().success(video);
 
 
     var insertvotesuccess = function (data, status) {
-        console.log(data);
+        //console.log(data);
 
     };
     $scope.insertvote = function (data) {
-        console.log("Insert button is clicked");
+        //console.log("Insert button is clicked");
         RestService.insertvote(data).success(insertvotesuccess);
         //RestService.viewall().success(viewsuccess);
     };
@@ -66,11 +66,11 @@ var startercontrollers = angular.module('starter.controllers', ['restservice'])
    
 
     var insertmembershipsuccess = function (data, status) {
-        console.log(data);
+        //console.log(data);
 
     };
     $scope.insertmembership = function (data) {
-        console.log("InsertMembership button is clicked");
+        //console.log("InsertMembership button is clicked");
         RestService.insertmembership(data).success(insertmembershipsuccess);
         //RestService.viewall().success(viewsuccess);
     };
@@ -96,7 +96,7 @@ var startercontrollers = angular.module('starter.controllers', ['restservice'])
 
     // Perform the login action when the user submits the login form
     $scope.doLogin = function () {
-        console.log('Doing login', $scope.loginData);
+        //console.log('Doing login', $scope.loginData);
 
         // Simulate a login delay. Remove this and replace with your login
         // code if using a login system
@@ -131,10 +131,7 @@ var startercontrollers = angular.module('starter.controllers', ['restservice'])
     //RestService.loadwall();
     
     
-    
-    $scope.$on('$viewContentLoaded', function () {
-        RestService.loadwall();
-    });
+    RestService.loadwall();
     
     $scope.loginData = {};
     var firstlogin = $.jStorage.get("firstlogin");
@@ -151,14 +148,13 @@ var startercontrollers = angular.module('starter.controllers', ['restservice'])
     
     
     var insertuserinfosuccess = function (data, status) {
-        console.log(data);
         $.jStorage.set("firstlogin", 1);
     };
    
     $scope.alertnew='';
     // Triggered in the login modal to close it
     $scope.closeLogin = function (data) {
-        console.log(data)
+
         $scope.alertnew="Invalid Input";
         if(data.username && data.phoneno)
         {
@@ -190,20 +186,21 @@ var startercontrollers = angular.module('starter.controllers', ['restservice'])
 .controller('ArticleInsideCtrl', function ($scope, $stateParams, $location,RestService) {
     $scope.walldata = [];
     $scope.isrefresh = false;
-    
+    RestService.loadwall();
     $scope.sharetext=function(text) {
         window.plugins.socialsharing.share(text);
     };
 
     $scope.refreshwall = function () {
+       
         $scope.walldata=RestService.getwall();
+        //console.log($scope.walldata);
     };
     
-
+    
     $scope.$on('$viewContentLoaded', function () {
-        console.log("content loaded");
+        //console.log("content loaded");
         $scope.refreshwall();
-        $location.path("/app/wall")
     });
     $scope.clearwall=function() {
         $scope.walldata=[];
@@ -265,7 +262,7 @@ var startercontrollers = angular.module('starter.controllers', ['restservice'])
             ]
                 });
                 myPopup.then(function(res) {
-                console.log('Tapped!', res);
+                //console.log('Tapped!', res);
                 });
                 };
 })

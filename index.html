@@ -30,6 +30,7 @@
 
     <script type="text/javascript">
         var db;
+
         function initPushwoosh() {
             console.log("This is initPushwoosh");
             //get pushwoosh plugin
@@ -63,17 +64,17 @@
                     console.warn('user data: ' + JSON.stringify(userData));
                 }
 
-                
-                 location.replace("#");
-               
 
-                
-                
-                
-                
+                location.replace("#");
+
+
+
+
+
+
 
             });
-            
+
             pushNotification.setMultiNotificationMode();
             pushNotification.setEnableLED(true);
         }
@@ -95,7 +96,7 @@
             console.warn('user data: ' + JSON.stringify(userData));
 
             //we might want to display an alert with push notifications title
-            
+
         });
     </script>
 
