@@ -63,28 +63,8 @@
                     console.warn('user data: ' + JSON.stringify(userData));
                 }
 
-                db = openDatabase('mydb', '1.0', 'appdb', 2 * 1024 * 1024);
-                var newid=0;
                 
-                db.transaction(function (tx) {
-                    tx.executeSql('SELECT count(`id`) as `id` FROM WALL', [], function (tx, results) {
-                        var len = results.rows.length, i;
-
-                        for (i = 0; i < len; i++){
-                            newid=results.rows.item(i).id;
-                            newid++;
-                            
-                            db.transaction(function (tx) {
-                                tx.executeSql('CREATE TABLE IF NOT EXISTS WALL (id unique, title,userdata)');
-                                tx.executeSql('INSERT INTO WALL (id, title,userdata) VALUES ('+newid+', "' + title + '","' + userData + '")');
-                            });
-                            console.log(newid);
-                            location.replace("#");
-                        }
-
-                    }, null);
-                });
-                
+                 location.replace("#");
                
 
                 
