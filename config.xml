@@ -12,7 +12,7 @@
     <author href="emahapolitician.in" email="info@wohlig.com">
         Wohlig Technologies
     </author>
-    <preference name="phonegap-version" value="3.0.0" />
+    <preference name="phonegap-version" value="3.5.0" />
     <gap:plugin name="org.apache.cordova.device" />
     <gap:plugin name="com.pushwoosh.plugins.pushwoosh" version="3.0.2" />
     <gap:plugin name="nl.x-services.plugins.socialsharing" version="4.3.0" />
@@ -23,9 +23,8 @@
     <preference name="fullscreen" value="false" />
     <preference name="orientation" value="portrait" />
     <preference name="splash-screen-duration" value="5000" />
-    <preference name="android-minSdkVersion" value="7" />
-
-
+    <preference name="android-minSdkVersion" value="10" />
+    <preference name="LoadUrlTimeoutValue" value="100000" />
     <access origin="*" />
     <!-- allow all pages, use for development -->
     <access origin="*.pushwoosh.com" />
