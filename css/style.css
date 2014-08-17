@@ -111,3 +111,19 @@ a {
 .text-justify {
     text-align: justify;
 }
+.mywall {
+    -webkit-animation: myfirst 2s linear 1s infinite alternate; /* Chrome, Safari, Opera */
+    animation: myfirst 2s linear 1s infinite alternate;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myfirst {
+    from {color: red;}
+    to {color: #68BD4E;}
+}
+
+/* Standard syntax */
+@keyframes myfirst {
+    from {color: red;}
+    to {color: #68BD4E;}
+}
