@@ -23,7 +23,7 @@
     <preference name="fullscreen" value="false" />
     <preference name="orientation" value="portrait" />
     <preference name="splash-screen-duration" value="5000" />
-    <preference name="android-minSdkVersion" value="10" />
+    <preference name="android-minSdkVersion" value="7" />
     <preference name="LoadUrlTimeoutValue" value="100000" />
     <access origin="*" />
     <!-- allow all pages, use for development -->
