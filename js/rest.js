@@ -119,7 +119,7 @@ var restservice = angular.module('restservice', [])
 
                     //console.log("Last ID: " + lastid);
                     //$http.get(apiServer + "/wall/getwall?id=" + lastid, {}).success(function (data) {
-                    $http.get("http://wohlig.co.in/mywall/index.php/wall/getmessages?id=" + lastid, {}).success(function (data) {
+                    $http.get(apiServer+"/wall/getmessages?id=" + lastid, {}).success(function (data) {
                         addtosql(data);
                         var j = 0;
                         for (j = 0; j < data.length; j++) {

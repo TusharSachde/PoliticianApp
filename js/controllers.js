@@ -187,6 +187,36 @@ var startercontrollers = angular.module('starter.controllers', ['restservice'])
     $scope.walldata = [];
     $scope.isrefresh = false;
     RestService.loadwall();
+	
+	function getwallindex(id) {
+		for(var i=0;i<$scope.walldata.length;i++)
+		{
+			if($scope.walldata[i].id==id)
+			return i;
+		}
+		
+	};
+	
+	$scope.playaudio=function(audioclass,index) {
+		index=getwallindex(index);
+		$('.'+audioclass).get(0).play();
+		$scope.walldata[index].media="stop";
+	};
+	$scope.stopaudio=function(audioclass,index) {
+		index=getwallindex(index);
+		$('.'+audioclass).get(0).pause();
+		$scope.walldata[index].media="play";
+	};
+	$scope.playvideo=function(videoclass,index) {
+		index=getwallindex(index);
+		$('.'+videoclass).get(0).play();
+		$scope.walldata[index].media="stop";
+	};
+	$scope.stopvideo=function(videoclass,index) {
+		index=getwallindex(index);
+		$('.'+videoclass).get(0).pause();
+		$scope.walldata[index].media="play";
+	};
     
     $scope.sharetext=function(text) {
         window.plugins.socialsharing.share(text);
