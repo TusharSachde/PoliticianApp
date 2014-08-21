@@ -5,7 +5,7 @@
         </ion-nav-buttons>
         <div class="list">
 
-            <div class="item item-text-wrap item-button-right" ng-repeat="wallsingle in walldata | unique:'id' | orderBy:'id':true ">
+            <div class="item item-text-wrap item-button-right" ng-repeat="wallsingle in walldata | unique:'id' | orderBy:orderby:true ">
                 <p ng-show="wallsingle.userdata=='Text'">{{wallsingle.title}}</p><a ng-show="wallsingle.userdata=='Text'" ng-click="sharetext(wallsingle.title)" class="button button-stable button-clear"><i class="icon ion-android-share"></i></a>
 
                 <p ng-show="wallsingle.userdata=='Image'">

@@ -13,7 +13,9 @@ var restservice = angular.module('restservice', [])
                 i;
 
             for (i = 0; i < len; i++) {
-                mywall.push(results.rows.item(i));
+				var message=results.rows.item(i);
+				message.id=parseInt(message.id);
+                mywall.push(message);
                 //console.log(results.rows.item(i));
 
             }

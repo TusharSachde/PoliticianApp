@@ -130,7 +130,7 @@ var startercontrollers = angular.module('starter.controllers', ['restservice'])
    
     //RestService.loadwall();
     
-    
+    init();
     RestService.loadwall();
     
     $scope.loginData = {};
@@ -186,6 +186,7 @@ var startercontrollers = angular.module('starter.controllers', ['restservice'])
 .controller('ArticleInsideCtrl', function ($scope, $stateParams, $location,RestService) {
     $scope.walldata = [];
     $scope.isrefresh = false;
+	$scope.orderby = 'id';
     RestService.loadwall();
 	
 	function getwallindex(id) {
@@ -231,6 +232,8 @@ var startercontrollers = angular.module('starter.controllers', ['restservice'])
     $scope.refreshwall = function () {
        
         $scope.walldata=RestService.getwall();
+		$scope.orderby = 'name';
+		$scope.orderby = 'id';
         //console.log($scope.walldata);
     };
     
