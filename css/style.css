@@ -72,6 +72,8 @@ a {
     vertical-align: middle;
     border-radius: 3px;
     margin-right: 5px;
+    position: absolute;
+    right: 0;
 }
 .img-half {
     width: 50%;
@@ -126,4 +128,7 @@ a {
 @keyframes myfirst {
     from {color: red;}
     to {color: #68BD4E;}
+}
+.vote-text {
+    padding-left: 30px;
 }
