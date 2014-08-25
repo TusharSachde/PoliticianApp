@@ -108,20 +108,10 @@ var startercontrollers = angular.module('starter.controllers', ['restservice'])
 })
 
 .controller('VoteCtrl', function ($scope) {
-    $scope.votes = [
-        {
-            title: 'Reggae',
-            id: 1
-        },
-        {
-            title: 'Chill',
-            id: 2
-        },
-        {
-            title: 'Dubstep',
-            id: 3
-        }
-  ];
+    $scope.playvoteaudio=function() {
+       console.log("Audio Start");
+        $('.voteaudio').get(0).play();
+    };
 })
 
 .controller('HomeCtrl', function ($scope, $stateParams, $ionicModal,RestService) {
@@ -308,6 +298,7 @@ var startercontrollers = angular.module('starter.controllers', ['restservice'])
 })
 
 .controller('VoteFormCtrl', function ($scope, $stateParams) {
+   
 })
 
 .controller('VideosCtrl', function ($scope, $stateParams) {
