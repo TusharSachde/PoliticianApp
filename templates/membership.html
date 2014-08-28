@@ -18,10 +18,12 @@
                     <option ng-repeat="val in getmlaconstituency" value="{{val.id}}" selected>{{val.name}}</option>
                 </select>
             </label>
+<!--
             <label class="item item-input">
                 <span class="input-label">Area</span>
                 <input type="text" ng-model="membership.area">
             </label>
+-->
             <label class="item item-input">
                 <span class="input-label">Polling Centre</span>
                 <input type="text" ng-model="membership.pollingcenter">
@@ -42,6 +44,7 @@
                 <span class="input-label">Birthday</span>
                 <input type="date" ng-model="membership.birthday">
             </label>
+<!--
             <label class="item item-input item-stacked-label">
                 <span class="input-label">Address</span>
                 <textarea ng-model="membership.address"></textarea>
@@ -58,10 +61,12 @@
                 <span class="input-label">District</span>
                 <input type="text" ng-model="membership.district">
             </label>
+-->
             <label class="item item-input">
                 <span class="input-label">Phone No.</span>
                 <input type="tel" ng-model="membership.phoneno">
             </label>
+<!--
             <label class="item item-input">
                 <span class="input-label">Email</span>
                 <input type="email" ng-model="membership.email">
@@ -74,6 +79,7 @@
                     <option ng-repeat="val in getstate" value="{{val.id}}" selected>{{val.name}}</option>
                 </select>
             </label>
+-->
         </div>
         <div class="padding"><a href="#" ng-click="insertmembership(membership)"><button class="button button-block button-politics">Register</button></a></div>
 

@@ -10,7 +10,7 @@
     </description>
 
     <author href="emahapolitician.in" email="info@wohlig.com">
-        Wohlig Technologies
+        E Maha Politician
     </author>
     <preference name="phonegap-version" value="3.5.0" />
     <gap:plugin name="org.apache.cordova.device" />
